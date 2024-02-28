@@ -78,9 +78,11 @@ input, button, label{
   width: 100%;
   display:flex;
   padding: 1.5rem;
+  height: fit-content;
+  gap: 1rem;
 }
 .line-chart{
   width: 70%;
-  height: 300;
+  height: fit-content;
   box-shadow: var(--shadow);
 }

@@ -1,0 +1,76 @@
+.input-select{
+    display: flex;
+    padding: 0.5rem;
+    width: 95%;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.search-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    width: 95%;
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+
+    box-shadow: var(--shadow);
+}
+.search-flex input{
+    width: 95%;
+    padding: 0.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+.search-flex input:focus{
+    outline: none;
+}
+
+.my-transactions-tab{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: var(--white);
+}
+
+.export-import-button{
+    width:70%;
+    padding: 0.2rem;
+    color: var(--theme);
+    border: 1px solid var(--theme);
+    border-radius: 0.4rem;
+    background-color: transparent;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.export-import-button:hover{
+    background-color: var(--theme);
+    color: var(--white);
+
+    font-size: small;
+    transition: all 0.5s;
+}
+
+.import-blue-btn{
+    background-color: var(--theme);
+    color: var(--white);
+    font-size: small;
+}
+
+.import-blue-btn:hover{
+    background-color: var(--white);
+    color: var(--theme);
+
+    transition: all 0.5s;
+}
+
+
+.table{
+    width:95%;
+}

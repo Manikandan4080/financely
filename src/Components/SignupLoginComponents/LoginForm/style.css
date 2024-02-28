@@ -1,0 +1,40 @@
+.login-form{
+    width: 60%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+
+    box-shadow: var(--shadow);
+}
+
+.form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.custom-input-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.3rem;
+    width: 100%;
+}
+
+.react-icon-google{
+    width: 20px;
+    height: 20px;
+    padding: 0.1rem;
+
+    border-radius: 5rem;
+    background-color: white;
+}

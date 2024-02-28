@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+:root{
+  --shadow: 0px 0px 30px 8px rgba(227, 227, 227, 0.75);
+  --theme: #2970ff;
+  --black: #000;
+  --white: #fff;
+  --font-family: "Kode Mono", monospace
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input, button, label{
+  font-family: var(--font-family);
+  background-color: transparent;
+}
+
+
+
+
+.dashboard-div{
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.transaction-table{
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.input-wrapper{
+  width: 100%;
+}
+.form-wrapper{
+  width: 100%;
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper p{
+  margin: 1rem;
+}
+
+.span-text{
+  color: var(--theme);
+  cursor: pointer;
+}
+.span-text:hover{
+  color: black;
+  transition: all 0.3s;
+}
+
+
+.no-transactions{
+  width: 70%;
+  color: grey;
+  height: 300px;
+}
+
+
+.charts{
+  width: 100%;
+  display:flex;
+  padding: 1.5rem;
+}
+.line-chart{
+  width: 70%;
+  height: 300;
+  box-shadow: var(--shadow);
 }

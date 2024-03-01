@@ -1,72 +1,136 @@
 import React from "react";
-import { Line, Pie } from "@ant-design/charts";
+import { Line,Pie } from "@ant-design/charts";
 
 const Charts = ({ transactions }) => {
+
   const sortedTransactions = transactions.sort(
     (a, b) => new Date(a.date) - new Date(b.date)
   );
-
   const data = sortedTransactions.map((transaction) => {
     return { date: transaction.date, amount: transaction.amount };
   });
 
-  const spendingData = sortedTransactions.filter((transaction) => {
-    if (transaction.type == "expense") {
-      return { tag: transaction.tag, amount: transaction.amount };
+
+
+
+  
+  const spendingData = transactions.filter((transaction) => {
+    if(transaction.type.includes("expense")){
+      return{tag:transaction.tag, amount:transaction.amount}
     }
   });
 
+
+
+
+  const incomeData = transactions.filter((transaction) => {
+    if(!transaction.type.includes("expense")){
+      return{tag:transaction.tag, amount:transaction.amount}
+    }
+  });
+
+
+
+
+
+
+
   let finalSpending = spendingData.reduce((acc, obj) => {
     let key = obj.tag;
-    if (!acc[key]) {
-      acc[key] = { tag: obj.tag, amount: obj.amount };
-    } else {
-      acc[key] += obj.amount;
+    if(!acc[key]){
+      acc[key] = {tag:obj.tag, amount:obj.amount};
+    }
+    else{
+      acc[key].amount += obj.amount;
     }
     return acc;
-  }, {});
+  }, {})
 
+
+
+
+  let finalIncome = incomeData.reduce((acc, obj) => {
+    let key = obj.tag;
+    if(!acc[key]){
+      acc[key] = {tag:obj.tag, amount:obj.amount};
+    }
+    else{
+      acc[key].amount += obj.amount;
+    }
+    return acc;
+  }, {})
+  
+
+
+  const spendingDataArray = Object.keys(finalSpending).map((key) => ({
+    tag: key,
+    amount: finalSpending[key].amount,
+  }));
+
+
+  const incomeDataArray = Object.keys(finalIncome).map((key) => ({
+    tag: key,
+    amount: finalIncome[key].amount,
+  }));
+
+
+
+
+
+  console.log("Final spendings >>>>>>>>>",finalSpending);
+
+
+
+  console.log("spending array final >>>>>>>" , spendingDataArray)
+
+
+
+
+
+  
   const config = {
     data: data,
     xField: "date",
     yField: "amount",
-    height: 300,
+    height:300,
   };
 
   const spendingConfig = {
-    data: finalSpending,
-    angleFeild: "tag",
-    colorFeild: "amount",
-  };
+    data: spendingDataArray,
+    angleField: "amount",
+    colorField: "tag",
+    width:300,
+    height:150
+  }
 
-  console.log(finalSpending);
+  const incomeConfig = {
+    data: incomeDataArray,
+    angleField: "amount",
+    colorField: "tag",
+    height:150,
+    width:300
+  }
+
 
   let chart;
-  let piechart;
+  let spendingPiechart;
+  let incomePiechart;
+
 
   return (
     <div className="charts">
       <div className="line-chart">
         <h3 style={{ margin: "1rem" }}>Your analytics</h3>
-        <Line
-          {...config}
-          onReady={(chartInstance) => (chart = chartInstance)}
-          className="linechart"
-        />
+        <Line {...config} onReady={(chartInstance) => (chart = chartInstance)} className="linechart" />
       </div>
       <div className="pie-chart">
         <div>
           <h3>Your Spendings</h3>
-          {/* <Pie
-            {...spendingConfig}
-            onReady={(chartInstance) => (piechart = chartInstance)}
-          /> */}
+          <Pie {...spendingConfig}/>
 
-          <Pie
-            {...spendingConfig}
-            onReady={(chartInstance) => (piechart = chartInstance)}
-            className="pie-chart"
-          />
+
+          <h3>Your Income</h3>
+          <Pie {...incomeConfig}/>
         </div>
       </div>
     </div>

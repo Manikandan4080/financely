@@ -86,3 +86,12 @@ input, button, label{
   height: fit-content;
   box-shadow: var(--shadow);
 }
+
+.pie-chart{
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  height: fit-content;
+  box-shadow: var(--shadow);
+}

@@ -100,14 +100,14 @@ const Charts = ({ transactions }) => {
     angleField: "amount",
     colorField: "tag",
     width:300,
-    height:150
+    height:145
   }
 
   const incomeConfig = {
     data: incomeDataArray,
     angleField: "amount",
     colorField: "tag",
-    height:150,
+    height:145,
     width:300
   }
 
@@ -125,11 +125,11 @@ const Charts = ({ transactions }) => {
       </div>
       <div className="pie-chart">
         <div>
-          <h3>Your Spendings</h3>
+          <h3 style={{margin:"0px"}}>Your Spendings</h3>
           <Pie {...spendingConfig}/>
 
 
-          <h3>Your Income</h3>
+          <h3 style={{margin:"0px"}}>Your Income</h3>
           <Pie {...incomeConfig}/>
         </div>
       </div>

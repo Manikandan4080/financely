@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import TransactionsTable from "../Components/TransactionsTable";
 import Charts from "../Components/Charts";
 import NoTransactions from "../Components/TransactionsTable/NoTransactions";
+import Loading from "../Components/Common/Loading";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -111,7 +112,7 @@ const Dashboard = () => {
     <div style={{width:"100%"}}>
       <Header />
       {loading ? (
-        <h2>Loading...</h2>
+        <Loading/>
       ) : (
         <div className='dashboard-div'>
           <Cards

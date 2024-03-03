@@ -7,7 +7,7 @@ const Charts = ({ transactions }) => {
     (a, b) => new Date(a.date) - new Date(b.date)
   );
   const data = sortedTransactions.map((transaction) => {
-    return { date: transaction.date, amount: transaction.amount };
+    return { date: transaction.date, amount: transaction.amount, type:transaction.type };
   });
 
 
@@ -77,11 +77,11 @@ const Charts = ({ transactions }) => {
 
 
 
-  console.log("Final spendings >>>>>>>>>",finalSpending);
+  // console.log("Final spendings >>>>>>>>>",finalSpending);
 
 
 
-  console.log("spending array final >>>>>>>" , spendingDataArray)
+  // console.log("spending array final >>>>>>>" , spendingDataArray)
 
 
 
@@ -93,6 +93,8 @@ const Charts = ({ transactions }) => {
     xField: "date",
     yField: "amount",
     height:300,
+    seriesField: "type",
+    colorField: 'type'
   };
 
   const spendingConfig = {

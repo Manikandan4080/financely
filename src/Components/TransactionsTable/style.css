@@ -73,4 +73,15 @@
 
 .table{
     width:95%;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+
+
+@media(max-width: 40em){
+    .my-transactions-tab{
+        gap:1rem;
+        flex-direction: column;
+    }
 }

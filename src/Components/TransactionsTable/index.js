@@ -172,7 +172,7 @@ const TransactionsTable = ({ transactions, fetchTransactions, setTransactions, u
           />
         </div>
       </div>
-      <Table className="table" dataSource={sortedValues} columns={columns} />;
+      <Table className="table" dataSource={sortedValues} columns={columns} />
     </div>
   );
 };

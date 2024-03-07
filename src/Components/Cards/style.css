@@ -6,7 +6,7 @@
 
 
     flex-wrap: wrap;
-    flex: 1;
+    flex: 2;
     padding: 2rem 1rem;
     gap: 1.5rem;
 }
@@ -14,4 +14,10 @@
     box-shadow: var(--shadow);
     font-family: var(--font-family);
     width: 350px;
+}
+.font-green{
+    color: green;
+}
+.font-red{
+    color: red;
 }

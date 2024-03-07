@@ -91,7 +91,7 @@ const SignupForm = () => {
 
   return (
     <div className="signup-form">
-      <h2>
+      <h2 style={{textAlign:"center", width:"100%"}}>
         Signup with <span style={{ color: "var(--theme)" }}>Financely</span>
       </h2>
       <form className="form">

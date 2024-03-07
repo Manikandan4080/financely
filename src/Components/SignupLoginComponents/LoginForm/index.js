@@ -64,7 +64,7 @@ const LoginForm = () => {
   };
   return (
     <div className="login-form">
-      <h2>
+      <h2 style={{textAlign:"center", width:"100%"}}>
         Login with <span style={{ color: "var(--theme)" }}>Financely</span>
       </h2>
 

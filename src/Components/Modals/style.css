@@ -2,3 +2,11 @@
     font-family: var(--font-family);
 
 }
+
+
+
+@media(max-width: 30em){
+    .modal-style{
+        width: 10%;
+    }
+}

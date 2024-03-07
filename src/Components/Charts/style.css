@@ -1,0 +1,27 @@
+pie-chart{
+    width:30%;
+    object-fit: contain;
+}
+
+
+
+@media(max-width: 50em){
+    .charts{
+        /* width: 80%; */
+        display: flex;
+        flex-direction: column;
+    }
+    .line-chart, .pie-chart{
+        width: 100%;
+    }
+    .pie-chart{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+@media(max-width: 40em){
+    .pie-chart{
+        display: block;
+    }
+}
